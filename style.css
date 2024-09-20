@@ -1,0 +1,379 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.logo {
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.login-button {
+    background-color: #ccff00;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.login-button:hover {
+    background-color: #b3e600;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.content {
+    display: flex;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.text-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.simulate {
+    background-color: #ccff00;
+    color: #121212;
+}
+
+.info {
+    background-color: transparent;
+    border: 2px solid #ccff00;
+    color: #ccff00;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(204, 255, 0, 0.3);
+}
+
+.simulate:hover {
+    background-color: #b3e600;
+}
+
+.info:hover {
+    background-color: #ccff00;
+    color: #121212;
+}
+
+.image-content {
+    flex: 1;
+    background-color: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fgts-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    color: #ffffff;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    color: #ccff00;
+    margin-bottom: 10px;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.modal-content button {
+    background-color: #ccff00;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-content button:hover {
+    background-color: #b3e600;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.modal-content li {
+    margin-bottom: 15px;
+}
+
+.modal-content strong {
+    color: #ccff00;
+}
+
+.modal-content ol {
+    padding-left: 20px;
+}
+
+.modal-content ol li {
+    margin-bottom: 15px;
+}
+
+#loginModal .modal-content {
+    max-width: 400px;
+}
+
+#loginModal input,
+#registerForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccff00;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+#loginModal button[type="submit"],
+#registerForm button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ccff00;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#loginModal button[type="submit"]:hover,
+#registerForm button[type="submit"]:hover {
+    background-color: #b3e600;
+}
+
+#loginModal p,
+#registerForm p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#loginModal a,
+#registerForm a {
+    color: #ccff00;
+    text-decoration: none;
+}
+
+#loginModal a:hover,
+#registerForm a:hover {
+    text-decoration: underline;
+}
+
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.welcome-content {
+    text-align: center;
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+}
+
+.welcome-image {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+}
+
+.welcome-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.welcome-content h2 {
+    font-size: 36px;
+    color: #ccff00;
+    margin-bottom: 30px;
+}
+
+.welcome-content .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.welcome-content .button-group button {
+    width: 100%;
+}
+
+.registration-intro {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.terms-agreement {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.terms-agreement label {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.profile-selection {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-selection h2 {
+    color: #ccff00;
+    margin-bottom: 10px;
+}
+
+.profile-selection h3 {
+    margin-bottom: 30px;
+}
+
+.profile-selection .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .text-content, .image-content {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .button-group {
+        align-items: stretch;
+    }
+}

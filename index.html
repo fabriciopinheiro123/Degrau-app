@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degrau Digital - Antecipe seu FGTS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="welcome-screen">
+        <div class="welcome-content">
+            <img src="images/SENHORA.png" alt="Senhora" class="welcome-image">
+            <h1>Bem-vindo à</h1>
+            <h2>Degrau Digital</h2>
+            <div class="button-group">
+                <button id="createAccountBtn" class="simulate">CRIAR CONTA</button>
+                <button id="loginAccountBtn" class="info">JÁ TENHO UMA CONTA</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-selection" style="display: none;">
+        <h2>CADASTRO</h2>
+        <h3>Qual é o seu perfil?</h3>
+        <div class="button-group">
+            <button id="workerProfile" class="simulate">Trabalhador com saldo de FGTS</button>
+            <button id="retireeProfile" class="info">Aposentado ou pensionista do INSS</button>
+        </div>
+    </div>
+
+    <div class="container" style="display: none;">
+        <header>
+            <img src="images/logo.png" alt="Logotipo Degrau Digital" class="logo">
+            <button id="loginButton" class="login-button">Login / Cadastro</button>
+        </header>
+        <main>
+            <div class="content">
+                <div class="text-content">
+                    <h1>Antecipe seu FGTS e receba o PIX em sua conta após 10 minutos.</h1>
+                    <div class="button-group">
+                        <button class="simulate">SIMULAR AGORA</button>
+                        <button class="info" id="openModal">O QUE É O SAQUE ANIVERSÁRIO?</button>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/SENHORA.png" alt="Imagem FGTS" class="fgts-image">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <!-- Passo 1 -->
+            <div id="step1" class="modal-step">
+                <h2>SAQUE ANIVERSÁRIO</h2>
+                <h3>O que é?</h3>
+                <p>O Saque-Aniversário é uma modalidade oferecida pelo FGTS para que o trabalhador possa sacar anualmente parte do saldo disponível no mês do seu aniversário. Se você deseja antecipar o Saque-Aniversário, saiba que é possível fazer o empréstimo com garantia do FGTS para realizar o saque em qualquer momento. O que antes precisava esperar ano a ano, com a Degrau Digital, você consegue em poucos minutos.</p>
+                <button id="continueToStep2">Continuar</button>
+            </div>
+            
+            <!-- Passo 2 -->
+            <div id="step2" class="modal-step" style="display: none;">
+                <h2>VANTAGENS</h2>
+                <h3>Tranquilidade para você</h3>
+                <ul>
+                    <li><strong>Pagamento rápido:</strong> No Pix e 24h por dia, aceitamos todas as chaves dos principais bancos.</li>
+                    <li><strong>Melhores condições:</strong> Nós fornecemos o crédito para você e conseguimos as melhores taxas.</li>
+                    <li><strong>Segurança:</strong> Seus dados estão protegidos. Temos uma equipe preparada para tudo ocorrer bem.</li>
+                    <li><strong>Negativado?</strong> Não se preocupe, nós não fazemos consulta no SPC ou Serasa.</li>
+                    <li><strong>Parcelas automáticas:</strong> As parcelas são pagas pela Caixa no 1° dia útil do mês do seu Saque-Aniversário.</li>
+                </ul>
+                <button id="continueToStep3">Continuar</button>
+            </div>
+
+            <!-- Passo 3 -->
+            <div id="step3" class="modal-step" style="display: none;">
+                <h2>REQUISITOS</h2>
+                <ul>
+                    <li>Ter saldo em conta ativa ou inativa do FGTS</li>
+                    <li>Ter aderido à modalidade Saque-Aniversário</li>
+                    <li>Ser maior de 18 anos ou emancipado</li>
+                    <li>Possuir conta bancária em seu nome</li>
+                    <li>Não ter contratado operação de antecipação com outro banco nos últimos 15 dias</li>
+                </ul>
+                <button id="continueToStep4">Continuar</button>
+            </div>
+
+            <!-- Passo 4 -->
+            <div id="step4" class="modal-step" style="display: none;">
+                <h2>COMO FUNCIONA</h2>
+                <h3>Tudo pelo celular. Simples e seguro.</h3>
+                <ol>
+                    <li><strong>Adesão:</strong> Faça adesão ao Saque-Aniversário no aplicativo FGTS.</li>
+                    <li><strong>Autorização:</strong> Autorize as instituições financeiras para consultarem suas informações.</li>
+                    <li><strong>Simulação:</strong> Confira o valor disponível para você.</li>
+                    <li><strong>Contratação:</strong> Seus dados serão analisados pela Caixa.</li>
+                    <li><strong>Liberação:</strong> Pronto! Seu dinheiro será liberado.</li>
+                </ol>
+                <button id="simulateNow">SIMULAR AGORA</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Login/Cadastro -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form>
+                    <input type="email" id="loginEmail" placeholder="E-mail" required>
+                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                    <button type="submit" id="loginSubmit" class="simulate">ENTRAR</button>
+                </form>
+                <p>Não tem uma conta? <a href="#" id="showRegister">Cadastre-se</a></p>
+            </div>
+            <div id="registerForm" style="display: none;">
+                <h2>Cadastro</h2>
+                <p class="registration-intro">Olá, precisamos que informe alguns dados seus para confirmarmos a identidade.</p>
+                <form>
+                    <input type="text" id="registerName" placeholder="Nome completo" required>
+                    <input type="email" id="registerEmail" placeholder="E-mail" required>
+                    <input type="tel" id="registerPhone" placeholder="Celular" required>
+                    <div class="terms-agreement">
+                        <input type="checkbox" id="termsAgreement" required>
+                        <label for="termsAgreement">Ao continuar, você declara que leu e aceitou os <a href="#" id="termsLink">Termos de Uso</a> e a <a href="#" id="privacyLink">Política de Privacidade</a> da aplicação.</label>
+                    </div>
+                    <button type="submit" id="registerSubmit" class="simulate">ACEITAR E CONTINUAR</button>
+                </form>
+                <p>Já tem uma conta? <a href="#" id="showLogin">Faça login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
